@@ -16,6 +16,7 @@ public class MainController implements ActionListener
 {
     private MainWindow mainWindow;
     private boolean startXMoveFirst = true;
+    private int numberCellTicked = 0;
 
     public MainController()
     {
@@ -27,6 +28,7 @@ public class MainController implements ActionListener
     {
         mainWindow.getLbStatus().setText(MainWindow.STT_STARTED);
         buildCaroPanel();
+        numberCellTicked = 0;
     }
 
     private void buildCaroPanel()
@@ -68,6 +70,11 @@ public class MainController implements ActionListener
                 setStartXMoveFirst(true);
             }
             cell.setCanTick(false);
+            numberCellTicked++;
+            if (numberCellTicked == 9)
+            {
+                mainWindow.getLbStatus().setText(MainWindow.STT_DRAWED);
+            }
         }
     }
 
