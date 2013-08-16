@@ -58,4 +58,16 @@ public class EndToEndTest
         applicationRunner.tickCell("1_2");
         applicationRunner.showsStatusGameDrawed();
     }
+
+    @Test
+    public void testStartGameThenPlayUtilXWin()
+    {
+        applicationRunner.startGame();
+        applicationRunner.tickCell("0_0");
+        applicationRunner.tickCell("1_1");
+        applicationRunner.tickCell("0_1");
+        applicationRunner.tickCell("1_2");
+        applicationRunner.tickCell("0_2");
+        applicationRunner.showsStatusXWon();
+    }
 }

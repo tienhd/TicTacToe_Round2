@@ -51,4 +51,9 @@ public class ApplicationRunner
     {
         ticTacToeDriver.showsStatusGameDrawed();
     }
+
+    public void showsStatusXWon()
+    {
+        ticTacToeDriver.showsStatusXWon();
+    }
 }

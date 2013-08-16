@@ -63,4 +63,10 @@ public class TicTacToeDriver extends JFrameDriver
         JLabelDriver labelStatusDriver = new JLabelDriver(this, named(MainWindow.LB_STATUS));
         labelStatusDriver.hasText(equalTo(MainWindow.STT_DRAWED));
     }
+
+    public void showsStatusXWon()
+    {
+        JLabelDriver labelStatusDriver = new JLabelDriver(this, named(MainWindow.LB_STATUS));
+        labelStatusDriver.hasText(equalTo(MainWindow.STT_XWON));
+    }
 }

@@ -23,6 +23,8 @@ public class MainWindow extends JFrame
     public static final String STT_STARTED = "GAME STARTED !";
     public static final String STT_ENDED = "GAME ENDED !";
     public static final String STT_DRAWED = "GAME DRAWED !";
+    public static final String STT_XWON = "X WON !";
+    public static final String STT_OWON = "O WON !";
     public static final int MAX_ROW = 3;
     public static final int MAX_COL = 3;
     private JPanel mainPanel;
