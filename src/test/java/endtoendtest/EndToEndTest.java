@@ -2,6 +2,7 @@ package endtoendtest;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 /**
  * User: tienhd
@@ -22,5 +23,14 @@ public class EndToEndTest
     public void tearDown()
     {
         applicationRunner.tearDownFrame();
+    }
+
+    @Test
+    public void testStartGameThenEndGame()
+    {
+        applicationRunner.startGame();
+        applicationRunner.showsStatusGameStarted();
+        applicationRunner.endGame();
+        applicationRunner.showsStatusGameEnded();
     }
 }

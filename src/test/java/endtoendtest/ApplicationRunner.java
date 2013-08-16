@@ -21,4 +21,24 @@ public class ApplicationRunner
     {
         ticTacToeDriver.dispose();
     }
+
+    public void startGame()
+    {
+        ticTacToeDriver.clickButtonStartGame();
+    }
+
+    public void endGame()
+    {
+        ticTacToeDriver.clickButtonEndGame();
+    }
+
+    public void showsStatusGameStarted()
+    {
+        ticTacToeDriver.showsStatusGameStarted();
+    }
+
+    public void showsStatusGameEnded()
+    {
+        ticTacToeDriver.showsStatusGameEnded();
+    }
 }
