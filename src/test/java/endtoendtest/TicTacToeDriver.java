@@ -51,4 +51,10 @@ public class TicTacToeDriver extends JFrameDriver
         JLabelDriver labelStatusDriver = new JLabelDriver(this, named(MainWindow.LB_STATUS));
         labelStatusDriver.hasText(equalTo(MainWindow.STT_ENDED));
     }
+
+    public void doTickCell(String nameCell)
+    {
+        JButtonDriver cellButtonDriver = new JButtonDriver(this, JButton.class, named(nameCell));
+        cellButtonDriver.click();
+    }
 }

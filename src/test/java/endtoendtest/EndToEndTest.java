@@ -33,4 +33,13 @@ public class EndToEndTest
         applicationRunner.endGame();
         applicationRunner.showsStatusGameEnded();
     }
+
+    @Test
+    public void testStartGameAndPlaySomeStepThenEndGame()
+    {
+        applicationRunner.startGame();
+        applicationRunner.tickCell("1_1");
+        applicationRunner.tickCell("1_2");
+        applicationRunner.endGame();
+    }
 }
