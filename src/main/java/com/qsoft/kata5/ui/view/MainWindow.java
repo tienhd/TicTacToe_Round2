@@ -24,7 +24,8 @@ public class MainWindow extends JFrame
     public static final String STT_ENDED = "GAME ENDED !";
     public static final String STT_DRAWED = "GAME DRAWED !";
     public static final String STT_XWON = "X WON !";
-    public static final String STT_OWON = "O WON !";
+    public static final String RDB_X = "rdbX";
+    public static final String RDB_O = "rdbO";
     public static final int MAX_ROW = 3;
     public static final int MAX_COL = 3;
     private JPanel mainPanel;
@@ -33,6 +34,8 @@ public class MainWindow extends JFrame
     private JButton btnEndGame;
     private JLabel lbStatus;
     private JPanel caroPanel = new JPanel(new GridLayout(MAX_ROW, MAX_COL));
+    private JRadioButton oRadioButton;
+    private JRadioButton xRadioButton;
     ;
     private Cell[][] cells = new Cell[MAX_ROW][MAX_COL];
 
@@ -95,7 +98,7 @@ public class MainWindow extends JFrame
     {
         createUIComponents();
         mainPanel = new JPanel();
-        mainPanel.setLayout(new FormLayout("fill:12px:noGrow,left:189dlu:noGrow,fill:d:grow", "center:d:noGrow,top:4dlu:noGrow,center:340px:noGrow"));
+        mainPanel.setLayout(new FormLayout("fill:12px:noGrow,left:200dlu:noGrow,fill:d:grow", "center:d:noGrow,top:4dlu:noGrow,center:max(d;4px):noGrow,top:4dlu:noGrow,center:max(d;4px):noGrow,top:4dlu:noGrow,center:max(d;4px):noGrow,top:4dlu:noGrow,center:max(d;4px):noGrow,top:4dlu:noGrow,center:340px:noGrow"));
         mainPanel.setFont(new Font("Vladimir Script", Font.BOLD, 18));
         mainPanel.setName("lbStatus");
         lbStatus = new JLabel();
@@ -117,8 +120,23 @@ public class MainWindow extends JFrame
         btnEndGame.setText("END GAME");
         controlPanel.add(btnEndGame, cc.xy(1, 3));
         caroPanel.setPreferredSize(new Dimension(700, 600));
-        mainPanel.add(caroPanel, cc.xy(2, 3, CellConstraints.FILL, CellConstraints.FILL));
+        mainPanel.add(caroPanel, cc.xywh(2, 3, 1, 9, CellConstraints.FILL, CellConstraints.FILL));
         caroPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(-16777216)), null));
+        oRadioButton = new JRadioButton();
+        oRadioButton.setName("rdbX");
+        oRadioButton.setText("O");
+        mainPanel.add(oRadioButton, cc.xy(3, 9, CellConstraints.CENTER, CellConstraints.DEFAULT));
+        final JLabel label1 = new JLabel();
+        label1.setText("PLAY FIRST");
+        mainPanel.add(label1, cc.xy(3, 5, CellConstraints.CENTER, CellConstraints.DEFAULT));
+        xRadioButton = new JRadioButton();
+        xRadioButton.setName("rdbO");
+        xRadioButton.setText("X");
+        mainPanel.add(xRadioButton, cc.xy(3, 7, CellConstraints.CENTER, CellConstraints.DEFAULT));
+        ButtonGroup buttonGroup;
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(xRadioButton);
+        buttonGroup.add(oRadioButton);
     }
 
     /**

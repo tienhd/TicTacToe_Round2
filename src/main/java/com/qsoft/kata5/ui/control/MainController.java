@@ -62,12 +62,14 @@ public class MainController implements ActionListener
                 cell.setText("X");
                 cell.setEnabled(false);
                 setStartXMoveFirst(false);
+                mainWindow.getLbStatus().setText("Let's O turn !");
             }
             else
             {
                 cell.setText("O");
                 cell.setEnabled(false);
                 setStartXMoveFirst(true);
+                mainWindow.getLbStatus().setText("Let's X turn !");
             }
             cell.setCanTick(false);
             checkWin();

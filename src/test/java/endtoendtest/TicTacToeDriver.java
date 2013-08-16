@@ -4,6 +4,7 @@ import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.driver.JButtonDriver;
 import com.objogate.wl.swing.driver.JFrameDriver;
 import com.objogate.wl.swing.driver.JLabelDriver;
+import com.objogate.wl.swing.driver.JRadioButtonDriver;
 import com.objogate.wl.swing.gesture.GesturePerformer;
 import com.qsoft.kata5.ui.view.MainWindow;
 
@@ -68,5 +69,11 @@ public class TicTacToeDriver extends JFrameDriver
     {
         JLabelDriver labelStatusDriver = new JLabelDriver(this, named(MainWindow.LB_STATUS));
         labelStatusDriver.hasText(equalTo(MainWindow.STT_XWON));
+    }
+
+    public void chooseSymbolXFirstPlay()
+    {
+        JRadioButtonDriver radioButtonXDriver = new JRadioButtonDriver(this, JRadioButton.class, named(MainWindow.RDB_X));
+        radioButtonXDriver.click();
     }
 }

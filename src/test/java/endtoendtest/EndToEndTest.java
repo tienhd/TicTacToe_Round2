@@ -70,4 +70,13 @@ public class EndToEndTest
         applicationRunner.tickCell("0_2");
         applicationRunner.showsStatusXWon();
     }
+
+    @Test
+    public void testChooseSymbolXThenStartGameWithSomeStep()
+    {
+        applicationRunner.chooseSymbolXFirstPlay();
+        applicationRunner.startGame();
+        applicationRunner.tickCell("0_0");
+        applicationRunner.tickCell("1_1");
+    }
 }

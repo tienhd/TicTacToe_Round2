@@ -56,4 +56,9 @@ public class ApplicationRunner
     {
         ticTacToeDriver.showsStatusXWon();
     }
+
+    public void chooseSymbolXFirstPlay()
+    {
+        ticTacToeDriver.chooseSymbolXFirstPlay();
+    }
 }
