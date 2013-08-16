@@ -37,6 +37,7 @@ public class TicTacToeDriver extends JFrameDriver
     public void clickButtonEndGame()
     {
         JButtonDriver buttonEndGameDriver = new JButtonDriver(this, JButton.class, named(MainWindow.BTN_ENDGAME));
+        buttonEndGameDriver.click();
     }
 
     public void showsStatusGameStarted()
