@@ -42,4 +42,20 @@ public class EndToEndTest
         applicationRunner.tickCell("1_2");
         applicationRunner.endGame();
     }
+
+    @Test
+    public void testStartGameThenPlayUtilTickFullCaroCell()
+    {
+        applicationRunner.startGame();
+        applicationRunner.tickCell("0_0");
+        applicationRunner.tickCell("0_1");
+        applicationRunner.tickCell("0_2");
+        applicationRunner.tickCell("2_0");
+        applicationRunner.tickCell("2_1");
+        applicationRunner.tickCell("2_2");
+        applicationRunner.tickCell("1_0");
+        applicationRunner.tickCell("1_1");
+        applicationRunner.tickCell("1_2");
+        applicationRunner.showsStatusGameDrawed();
+    }
 }

@@ -46,4 +46,9 @@ public class ApplicationRunner
     {
         ticTacToeDriver.doTickCell(nameCell);
     }
+
+    public void showsStatusGameDrawed()
+    {
+        ticTacToeDriver.showsStatusGameDrawed();
+    }
 }
