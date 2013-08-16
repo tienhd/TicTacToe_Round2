@@ -84,7 +84,7 @@
         </border>
         <children/>
       </grid>
-      <component id="5a00e" class="javax.swing.JRadioButton" binding="oRadioButton" default-binding="true">
+      <component id="5a00e" class="javax.swing.JRadioButton" binding="rdbO">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>
@@ -103,7 +103,7 @@
           <text value="PLAY FIRST"/>
         </properties>
       </component>
-      <component id="b55eb" class="javax.swing.JRadioButton" binding="xRadioButton" default-binding="true">
+      <component id="b55eb" class="javax.swing.JRadioButton" binding="rdbX">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>

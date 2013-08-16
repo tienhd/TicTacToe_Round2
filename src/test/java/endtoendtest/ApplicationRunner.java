@@ -61,4 +61,9 @@ public class ApplicationRunner
     {
         ticTacToeDriver.chooseSymbolXFirstPlay();
     }
+
+    public void chooseSymbolOFirstPlay()
+    {
+        ticTacToeDriver.chooseSymbolOFirstPlay();
+    }
 }

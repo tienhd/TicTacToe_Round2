@@ -76,4 +76,10 @@ public class TicTacToeDriver extends JFrameDriver
         JRadioButtonDriver radioButtonXDriver = new JRadioButtonDriver(this, JRadioButton.class, named(MainWindow.RDB_X));
         radioButtonXDriver.click();
     }
+
+    public void chooseSymbolOFirstPlay()
+    {
+        JRadioButtonDriver radioButtonXDriver = new JRadioButtonDriver(this, JRadioButton.class, named(MainWindow.RDB_O));
+        radioButtonXDriver.click();
+    }
 }

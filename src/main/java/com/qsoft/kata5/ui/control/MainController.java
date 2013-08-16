@@ -132,4 +132,14 @@ public class MainController implements ActionListener
     {
         this.startXMoveFirst = startXMoveFirst;
     }
+
+    public void doClickRadioButtonX()
+    {
+        setStartXMoveFirst(true);
+    }
+
+    public void doClickRadioButtonO()
+    {
+        setStartXMoveFirst(false);
+    }
 }
