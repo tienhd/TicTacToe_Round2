@@ -1,5 +1,6 @@
 package endtoendtest;
 
+import org.junit.After;
 import org.junit.Before;
 
 /**
@@ -14,6 +15,12 @@ public class EndToEndTest
     @Before
     public void setUp()
     {
-        applicationRunner.startGame();
+        applicationRunner.setUpFrame();
+    }
+
+    @After
+    public void tearDown()
+    {
+        applicationRunner.tearDownFrame();
     }
 }

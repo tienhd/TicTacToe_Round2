@@ -1,5 +1,7 @@
 package endtoendtest;
 
+import com.qsoft.kata5.MainApp;
+
 /**
  * User: Admin
  * Date: 8/16/13
@@ -7,10 +9,16 @@ package endtoendtest;
  */
 public class ApplicationRunner
 {
-    TicTacToeDriver ticTacToeDriver = new TicTacToeDriver();
+    TicTacToeDriver ticTacToeDriver;
 
-    public void startGame()
+    public void setUpFrame()
     {
+        MainApp.main();
+        ticTacToeDriver = new TicTacToeDriver(2000);
+    }
 
+    public void tearDownFrame()
+    {
+        ticTacToeDriver.dispose();
     }
 }

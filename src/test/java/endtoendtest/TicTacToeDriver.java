@@ -3,6 +3,7 @@ package endtoendtest;
 import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.driver.JFrameDriver;
 import com.objogate.wl.swing.gesture.GesturePerformer;
+import com.qsoft.kata5.ui.view.MainWindow;
 
 /**
  * User: Admin
@@ -11,7 +12,7 @@ import com.objogate.wl.swing.gesture.GesturePerformer;
  */
 public class TicTacToeDriver extends JFrameDriver
 {
-    public TicTacToeDriver(int timeoutMillis, String name)
+    public TicTacToeDriver(int timeoutMillis)
     {
         super(new GesturePerformer(),
                 JFrameDriver.topLevelFrame(
