@@ -13,6 +13,10 @@ public class Cell extends JButton
 {
     private boolean canTick = true;
 
+    public Cell()
+    {
+    }
+
     public Cell(MainController mainController)
     {
         super();
