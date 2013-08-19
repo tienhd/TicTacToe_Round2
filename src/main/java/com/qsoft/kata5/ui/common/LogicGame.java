@@ -13,21 +13,22 @@ public class LogicGame
     {
         for (int i = 0; i < 3; i++)
         {
-            if (cells[i][0].getText().equals(cells[i][1].getText()) &&
-                    cells[i][0].getText().equals(cells[i][2].getText()))
+            if (value(cells[i][0]).equals(value(cells[i][1])) && value(cells[i][0]).equals(value(cells[i][2])))
             {
-                return cells[i][0].getText();
+                return value(cells[i][0]);
+            }
+
+            if (value(cells[0][i]).equals(value(cells[1][i])) && value(cells[0][i]).equals(value(cells[2][i])))
+            {
+                return value(cells[0][i]);
             }
         }
 
-        for (int j = 0; j < 3; j++)
-        {
-            if (cells[0][j].getText().equals(cells[1][j].getText()) &&
-                    cells[0][j].getText().equals(cells[2][j].getText()))
-            {
-                return cells[0][j].getText();
-            }
-        }
         return null;
+    }
+
+    public static String value(Cell cell)
+    {
+        return cell.getText();
     }
 }
