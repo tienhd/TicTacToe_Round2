@@ -1,4 +1,4 @@
-package logicgametest;
+package unittest.logicgametest;
 
 import com.qsoft.kata5.ui.common.LogicGame;
 import com.qsoft.kata5.ui.view.Cell;
