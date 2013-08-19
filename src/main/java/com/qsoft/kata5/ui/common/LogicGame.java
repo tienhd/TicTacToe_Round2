@@ -11,6 +11,14 @@ public class LogicGame
 {
     public static String getWinner(Cell[][] cells)
     {
+        for (int i = 0; i < 3; i++)
+        {
+            if (cells[i][0].getText().equals(cells[i][1].getText()) &&
+                    cells[i][0].getText().equals(cells[i][2].getText()))
+            {
+                return cells[i][0].getText();
+            }
+        }
         return null;
     }
 }
