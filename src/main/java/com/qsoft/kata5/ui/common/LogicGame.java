@@ -29,6 +29,11 @@ public class LogicGame
             return value(cells[0][0]);
         }
 
+        if (checkEquals(cells[2][0], cells[1][1]) && checkEquals(cells[2][0], cells[0][2]))
+        {
+            return value(cells[2][0]);
+        }
+
         return null;
     }
 
