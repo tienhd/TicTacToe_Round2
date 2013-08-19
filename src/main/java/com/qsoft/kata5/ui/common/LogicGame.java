@@ -13,28 +13,37 @@ public class LogicGame
     {
         for (int i = 0; i < 3; i++)
         {
-            if (checkEquals(cells[i][0], cells[i][1]) && checkEquals(cells[i][0], cells[i][2]))
+            if (checkWin(cells[i][0], cells[i][1], cells[i][2]))
             {
                 return value(cells[i][0]);
             }
 
-            if (checkEquals(cells[0][i], cells[1][i]) && checkEquals(cells[0][i], cells[2][i]))
+            if (checkWin(cells[0][i], cells[1][i], cells[2][i]))
             {
                 return value(cells[0][i]);
             }
         }
 
-        if (checkEquals(cells[0][0], cells[1][1]) && checkEquals(cells[0][0], cells[2][2]))
+        if (checkWin(cells[0][0], cells[1][1], cells[2][2]))
         {
             return value(cells[0][0]);
         }
 
-        if (checkEquals(cells[2][0], cells[1][1]) && checkEquals(cells[2][0], cells[0][2]))
+        if (checkWin(cells[2][0], cells[1][1], cells[0][2]))
         {
             return value(cells[2][0]);
         }
 
         return null;
+    }
+
+    public static boolean checkWin(Cell cell1, Cell cell2, Cell cell3)
+    {
+        if (checkEquals(cell1, cell2) && checkEquals(cell1, cell3))
+        {
+            return true;
+        }
+        return false;
     }
 
     public static boolean checkEquals(Cell cell1, Cell cell2)
