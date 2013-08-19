@@ -1,7 +1,11 @@
 package logicgametest;
 
+import com.qsoft.kata5.ui.common.LogicGame;
 import com.qsoft.kata5.ui.view.Cell;
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * User: Admin
@@ -24,4 +28,14 @@ public class LogicGameTest
         }
     }
 
+    @Test
+    public void testLogicGameForOWinInRow()
+    {
+        cells[0][0].setText("X");
+        cells[1][0].setText("O");
+        cells[0][1].setText("X");
+        cells[1][1].setText("O");
+        cells[0][2].setText("X");
+        assertEquals("X", LogicGame.getWinner(cells));
+    }
 }
