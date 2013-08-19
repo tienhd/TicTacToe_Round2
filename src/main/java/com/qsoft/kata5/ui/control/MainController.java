@@ -27,7 +27,7 @@ public class MainController implements ActionListener
 
     public void doStartGame()
     {
-        mainWindow.getLbStatus().setText(MainWindow.STT_STARTED);
+        showsStatus(MainWindow.STT_STARTED);
         buildCaroPanel();
         numberCellTicked = 0;
     }
@@ -49,7 +49,7 @@ public class MainController implements ActionListener
 
     public void doEndGame()
     {
-        mainWindow.getLbStatus().setText(MainWindow.STT_ENDED);
+        showsStatus(MainWindow.STT_ENDED);
     }
 
     @Override
@@ -63,21 +63,21 @@ public class MainController implements ActionListener
                 cell.setText("X");
                 cell.setEnabled(false);
                 setStartXMoveFirst(false);
-                mainWindow.getLbStatus().setText("Let's O turn !");
+                showsStatus("Let's O turn !");
             }
             else
             {
                 cell.setText("O");
                 cell.setEnabled(false);
                 setStartXMoveFirst(true);
-                mainWindow.getLbStatus().setText("Let's X turn !");
+                showsStatus("Let's X turn !");
             }
             cell.setCanTick(false);
             showsWinner();
             numberCellTicked++;
             if (numberCellTicked == 9)
             {
-                mainWindow.getLbStatus().setText(MainWindow.STT_DRAWED);
+                showsStatus(MainWindow.STT_DRAWED);
             }
         }
     }
@@ -87,7 +87,7 @@ public class MainController implements ActionListener
         String winnerSymbol = LogicGame.getWinner(mainWindow.getCells());
         if (winnerSymbol != null && !winnerSymbol.equals(""))
         {
-            mainWindow.getLbStatus().setText(winnerSymbol + "WON !");
+            showsStatus(winnerSymbol + "WON !");
         }
     }
 
@@ -109,5 +109,10 @@ public class MainController implements ActionListener
     public void doClickRadioButtonO()
     {
         setStartXMoveFirst(false);
+    }
+
+    public void showsStatus(String status)
+    {
+        mainWindow.getLbStatus().setText(status);
     }
 }
