@@ -60,4 +60,15 @@ public class LogicGameTest
         cells[2][2].setText("X");
         assertEquals("X", LogicGame.getWinner(cells));
     }
+
+    @Test
+    public void testLogicGameForXWinInLeftCross()
+    {
+        cells[2][0].setText("X");
+        cells[1][0].setText("O");
+        cells[1][1].setText("X");
+        cells[2][1].setText("O");
+        cells[0][2].setText("X");
+        assertEquals("X", LogicGame.getWinner(cells));
+    }
 }
