@@ -19,6 +19,15 @@ public class LogicGame
                 return cells[i][0].getText();
             }
         }
+
+        for (int j = 0; j < 3; j++)
+        {
+            if (cells[0][j].getText().equals(cells[1][j].getText()) &&
+                    cells[0][j].getText().equals(cells[2][j].getText()))
+            {
+                return cells[0][j].getText();
+            }
+        }
         return null;
     }
 }
