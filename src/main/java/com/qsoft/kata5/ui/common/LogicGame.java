@@ -24,6 +24,11 @@ public class LogicGame
             }
         }
 
+        if (value(cells[0][0]).equals(value(cells[1][1])) && value(cells[0][0]).equals(value(cells[2][2])))
+        {
+            return value(cells[0][0]);
+        }
+
         return null;
     }
 
