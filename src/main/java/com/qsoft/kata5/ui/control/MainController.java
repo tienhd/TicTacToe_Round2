@@ -1,5 +1,6 @@
 package com.qsoft.kata5.ui.control;
 
+import com.qsoft.kata5.ui.common.LogicGame;
 import com.qsoft.kata5.ui.view.Cell;
 import com.qsoft.kata5.ui.view.MainWindow;
 
@@ -72,11 +73,21 @@ public class MainController implements ActionListener
                 mainWindow.getLbStatus().setText("Let's X turn !");
             }
             cell.setCanTick(false);
+            showsWinner();
             numberCellTicked++;
             if (numberCellTicked == 9)
             {
                 mainWindow.getLbStatus().setText(MainWindow.STT_DRAWED);
             }
+        }
+    }
+
+    private void showsWinner()
+    {
+        String winnerSymbol = LogicGame.getWinner(mainWindow.getCells());
+        if (winnerSymbol != null && !winnerSymbol.equals(""))
+        {
+            mainWindow.getLbStatus().setText(winnerSymbol + "WON !");
         }
     }
 
