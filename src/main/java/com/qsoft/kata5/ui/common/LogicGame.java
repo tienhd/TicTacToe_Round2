@@ -13,23 +13,32 @@ public class LogicGame
     {
         for (int i = 0; i < 3; i++)
         {
-            if (value(cells[i][0]).equals(value(cells[i][1])) && value(cells[i][0]).equals(value(cells[i][2])))
+            if (checkEquals(cells[i][0], cells[i][1]) && checkEquals(cells[i][0], cells[i][2]))
             {
                 return value(cells[i][0]);
             }
 
-            if (value(cells[0][i]).equals(value(cells[1][i])) && value(cells[0][i]).equals(value(cells[2][i])))
+            if (checkEquals(cells[0][i], cells[1][i]) && checkEquals(cells[0][i], cells[2][i]))
             {
                 return value(cells[0][i]);
             }
         }
 
-        if (value(cells[0][0]).equals(value(cells[1][1])) && value(cells[0][0]).equals(value(cells[2][2])))
+        if (checkEquals(cells[0][0], cells[1][1]) && checkEquals(cells[0][0], cells[2][2]))
         {
             return value(cells[0][0]);
         }
 
         return null;
+    }
+
+    public static boolean checkEquals(Cell cell1, Cell cell2)
+    {
+        if (value(cell1).equals(value(cell2)))
+        {
+            return true;
+        }
+        return false;
     }
 
     public static String value(Cell cell)
