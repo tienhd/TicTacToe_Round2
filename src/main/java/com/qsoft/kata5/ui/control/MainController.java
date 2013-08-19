@@ -87,7 +87,7 @@ public class MainController implements ActionListener
         String winnerSymbol = LogicGame.getWinner(mainWindow.getCells());
         if (winnerSymbol != null && !winnerSymbol.equals(""))
         {
-            showsStatus(winnerSymbol + "WON !");
+            showsStatus(winnerSymbol + " WON !");
         }
     }
 
