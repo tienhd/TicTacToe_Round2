@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: thinhdd
@@ -33,5 +35,14 @@ public class HistoryServiceTest
         TicTacToeMatch ticTacToeMatch = new TicTacToeMatch(1999900000L, "X", "X", "0_0,1_0,1_1,2_1,2_2");
         TicTacToeMatch getMatch = historyDAO.create(ticTacToeMatch);
         Assert.assertNotNull(getMatch.getId());
+    }
+    @Test
+    public void testGetAllMatchFromDB()
+    {
+        List<TicTacToeMatch> getList = historyDAO.getAll();
+        TicTacToeMatch ticTacToeMatch1 = new TicTacToeMatch(1999999999L, "X", "X", "0_0,1_0,1_1,2_1,2_2");
+        TicTacToeMatch ticTacToeMatch2 = new TicTacToeMatch(2999999999L, "X", "X", "0_0,1_0,1_1,2_1,2_2");
+        Assert.assertEquals(getList.get(0), ticTacToeMatch1);
+        Assert.assertEquals(getList.get(1), ticTacToeMatch2);
     }
 }

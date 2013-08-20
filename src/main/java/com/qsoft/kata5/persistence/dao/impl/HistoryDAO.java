@@ -28,4 +28,10 @@ public class HistoryDAO implements IHistoryDAO
         entityManager.persist(match);
         return match;
     }
+
+    @Override
+    public List<TicTacToeMatch> getAll() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
 }
