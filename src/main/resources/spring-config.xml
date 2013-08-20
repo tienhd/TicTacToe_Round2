@@ -24,6 +24,9 @@
             <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
             </bean>
         </property>
+        <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+        </property>
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

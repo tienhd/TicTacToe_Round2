@@ -25,7 +25,7 @@ public class HistoryDAO implements IHistoryDAO
     @Override
     public TicTacToeMatch create(TicTacToeMatch match)
     {
-
-        return null;
+        entityManager.persist(match);
+        return match;
     }
 }
